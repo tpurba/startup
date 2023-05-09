@@ -7,24 +7,30 @@
     <title>Runner</title>
 </head>
 <body>
-    <ul>
+    <h1>Login / Register</h1>
+    <form action="index.html" method="post">
+      <ul>
         <li>
-            <label for="UserName">UserName: </label>
-            <input type="text" id="userName" name="varUserName" placeholder="User name here" required pattern="[Aa].*" />
+          <label for="UserName">UserName: </label>
+          <input type="text" id="UserName" name="varUser" placeholder="UserName here" required pattern="[Aa].*" />
         </li>
         <li>
             <label for="Email">Email: </label>
             <input type="email" id="email" name="varEmail" placeholder="email here" required pattern="[Aa].*" />
-        </li>
+          </li>
         <li>
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="varPassword" />
+          <label for="password">Password: </label>
+          <input type="password" id="password" name="varPassword" placeholder="password here"/>
         </li>
+      </ul>
+  
+      <button type="submit">Submit</button>
+    </form>
     <footer>
         <p> Hyper links:</p>
         <a href ="help.html">Help</a>
         <br>
         <a href ="scoreBoard.html">scoreBoard</a>
+        
     </footer>
-</body>
-</html>
+  </body>
