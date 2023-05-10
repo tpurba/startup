@@ -35,4 +35,4 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 		○ Store users 
 		○ Store high scores 
 	• Login- Register and login users. 
-	• WebSocket- when run ends you send the data to the database and show where the user is on the leader board 
+	• WebSocket(communicates back and forth between many computers )- when run ends you send the data to the database and show where the user is on the leader board. Also notifies the user when someone starts playing the game and when they finish you will see what they scored like a notifciation.
