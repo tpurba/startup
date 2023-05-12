@@ -1,0 +1,28 @@
+*{
+  background-color: azure  ;
+  color: black;
+}
+
+.Title {
+    flex: 0 50px;
+    font-size: 20px;
+    background: hsl(223, 57%, 38%);
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+.content {
+    margin: 0;
+    border: 1px solid black;
+}     
+.picture{
+  float: right;
+  margin: 0.5em;
+  border: black solid thin;
+}
+.HowToPlay{
+    
+}

@@ -6,14 +6,14 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 
 ### **Design**
 
-<img src="LoginPage.png" 
+<img src="images/LoginPage.png" 
              height = "200" width = "200" alt="LoginPage">
-<img src="Play.png" 
+<img src="images/Play.png" 
             height = "200" width = "200" alt="PlayPage">           
 
 ### **Back End Diagram**
 
- <img src="ProgramLayout.png" 
+ <img src="images/ProgramLayout.png" 
              height = "200" width = "200" alt="BackEnd">
 
 
