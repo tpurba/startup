@@ -7,22 +7,51 @@
     flex: 0 50px;
     font-size: 20px;
     background: hsl(223, 57%, 38%);
-    color: white;
 
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center;
   }
+div {
+  padding: 0 0.5em;
+  font-size: 40px;
+  background-color: hsl(223, 57%, 38%);
+  Color: white;
+}
+.button  {
+  background-color: hsl(223, 57%, 38%);
+  color: azure;
+}
 .content {
     margin: 0;
     border: 1px solid black;
-}     
+}
+p{
+  font-size: 20px;
+}
 .picture{
   float: right;
-  margin: 0.5em;
   border: black solid thin;
 }
-.HowToPlay{
-    
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+footer{
+  flex: 0 50px; 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: hsl(180, 30%, 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: red solid thin;
+}
+.github{
+  background-color: hsl(180, 30%, 15%);
+  color: white;
 }
