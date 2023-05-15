@@ -5,7 +5,7 @@ header {
     flex: 0 50px;
     font-size: 20px;
     background: hsl(223, 57%, 38%);
-
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: start;
