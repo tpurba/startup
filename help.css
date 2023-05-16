@@ -1,57 +1,111 @@
 *{
   background-color: azure  ;
   color: black;
+  font-style: italic;
+}
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+header {
+  margin: 0;
+  flex: 0 50px;
+  font-size: 20px;
+  font-family: fantasy;
+  background: hsl(223, 57%, 38%);
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
 }
 
-.Title {
-    flex: 0 50px;
-    font-size: 20px;
-    background: hsl(223, 57%, 38%);
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-  }
-div {
-  padding: 0 0.5em;
-  font-size: 40px;
+#navbar{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: start;
   background-color: hsl(223, 57%, 38%);
-  Color: white;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
+.navlink {
+  background-color: hsl(223, 57%, 38%);
+  padding: 10px;
+}
+
 .button  {
   background-color: hsl(223, 57%, 38%);
   color: azure;
 }
 .content {
-    margin: 0;
-    border: 1px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 p{
   font-size: 20px;
 }
 .picture{
-  float: right;
-  border: black solid thin;
-}
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
+
+#sunset{
+  width: 100%;
+  height: 100%;
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 footer{
   flex: 0 50px; 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin-top: auto;
   background: hsl(180, 30%, 15%);
   display: flex;
   flex-direction: column;
   align-items: center;
   border: black solid thin;
 }
+
 .github{
   background-color: hsl(180, 30%, 15%);
   color: white;
+}
+
+/* @media (max-height: 700px) {
+  header {
+    display: none;
+  }
+  .picture{
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  main {
+    flex: 1 100vh;
+  }
+}  */
+
+#page-container {
+  height: 100vh;
+  min-height: 100%;
+  overflow: scroll !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#content-wrap {
+  height: fit-content;
+}
+
+#footer {
+  width: 100%;
 }

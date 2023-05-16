@@ -1,8 +1,32 @@
 *{
-  background-color: azure;
+  background-color: darkgrey;
+}
+.players {
+  flex: 1;
+  width: 100%;
+}
+
+.player-name {
+  color: greenyellow;
+}
+
+#player-messages {
+  padding-top: 0.25em;
+}
+
+.event {
+  color: yellow;
+}
+
+.player-event {
+  color: purple;
+}
+
+.system-event {
+  color: purple;
 }
 header {
-    flex: 0 50px;
+    flex: 0 80px;
     font-size: 20px;
     background: hsl(223, 57%, 38%);
     height: 50px;
@@ -17,6 +41,7 @@ header {
   background-color: hsl(223, 57%, 38%);
   Color: white;
 }
+
 .game {
     opacity: 1;
     border: black solid thick;
@@ -76,3 +101,14 @@ header {
     background-color: hsl(180, 30%, 15%);
     color: white;
   }
+  @media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  } 
