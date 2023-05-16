@@ -1,91 +1,133 @@
-*{
-    background-color: lightgoldenrodyellow;
-    font-family: fantasy;
+* {
+  background-color: lightgoldenrodyellow;
+  font-family: fantasy;
 }
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
 header {
-    flex: 0 50px;
-    font-size: 20px;
-    background: hsl(223, 57%, 38%);
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-  }
-div {
-  padding: 0 0.5em;
-  font-size: 40px;
-  background-color: hsl(223, 57%, 38%);
-  Color: white;
+  margin: 0;
+  flex: 0 50px;
+  font-size: 20px;
+  font-family: fantasy;
+  background: hsl(223, 57%, 38%);
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
 }
-.button  {
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: start;
+  background-color: hsl(223, 57%, 38%);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navlink {
+  background-color: hsl(223, 57%, 38%);
+  padding: 10px;
+}
+
+.link {
   background-color: hsl(223, 57%, 38%);
   color: azure;
 }
-.prompt
-{
-    margin: auto;
-    width: 500px; 
-    height: 400px; 
-    font-size: 30px;
-    flex: 1;
-    position: absolute; 
-    background-color: azure;
-    left: 0; 
-    right: 0; 
-    top: 0; 
-    bottom: 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: solid thin black;
-}
-.login-title{
-  background-color: azure;
-}
-.input{
-  background-color: azure;
-}
-.list{
-  background-color: azure;
-}
-.game-title{
-  font-size: 50px;
-  text-align: center;
-  color: purple;
-}
-body {
-    margin: 0;
-  }
 
-.github{
-    background-color: hsl(180, 30%, 15%);
-    color: white;
+.myheader {
+  color: rebeccapurple;
+  font-size: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.prompt {
+  margin: auto;
+  width: 100vw;
+  height: 50vh;
+  font-size: 30px;
+  background-color: azure;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.subHeader {
+  margin: 0;
+  background-color: azure;
+}
+
+.input {
+  background-color: azure;
+  padding-right: 10px;
+}
+
+.list {
+  background-color: azure; 
+}
+button{
+  font-size: 40px;
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  flex: 0 50px;
+  margin-top: auto;
+  background: hsl(180, 30%, 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid thin;
+}
+
+.github {
+  background-color: hsl(180, 30%, 15%);
+  color: white;
+}
+
+#page-container {
+  height: 100vh;
+  min-height: 100%;
+  overflow: scroll !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#content-wrap {
+  height: fit-content;
+}
+
+#footer {
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  .myheader{
+    display: none;
   }
-footer{
-    flex: 0 50px; 
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: hsl(180, 30%, 15%);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: red solid thin;
-  }
-  @media (max-height: 700px){
-    header {
-      display: none;
-    }
-    footer {
-      display: none;
-    }
-    .prompt {
-      flex: 1 100vh;
-    }
-    .game-title{
-      flex: 1 100vh;
-    }
-  } 
+}

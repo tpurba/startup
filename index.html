@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css" />
-    <title>Runner</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css" />
+  <title>Runner</title>
 </head>
+
 <body>
-  <header>
-    <div>Login</div>
-    <div><a class = "help button" href ="help.html">About</a></div>
-    <div><a class="scoreBoard button" href ="scoreBoard.html">ScoreBoard</a></div>
-  </header>
-  <h1 class="game-title">Welcome To The Game Runner</h1>
-    <form class = "Login prompt"action="index.html" method="post">
-      <h2 class = "login-title">Runner</h2>
-      <ul class = "list">
-        <li class = input>
-          <label for="UserName" class ="input text">UserName: </label>
-          <input type="text" class = "input" id="UserName input" name="varUser" placeholder="UserName here" required pattern="[Aa].*" />
-        </li>
-        <li class = input>
-            <label for="Email" class ="input text">Email: </label>
-            <input type="email" class = "input" id="email input" name="varEmail" placeholder="email here" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-          </li>
-        <li class = input>
-          <label for="password" class ="input text">Password: </label>
-          <input type="password" class = input id="password input" name="varPassword" placeholder="password here"/>
-        </li>
-      </ul>
-  
-      <button type="submit" class="input">Submit</button>
-    </form>
-    <footer>
-        
-        <p class = "github text">Takun Purba: <a class="github link" href ="https://github.com/tpurba/startup.git">GitHub</a></p>
-        
+  <div id="page-container">
+    <div id="content-wrap">
+      <header>
+        <div id="navbar">
+          <div class="navlink">Login</div>
+          <div class="navlink"><a  class ="link" href="help.html">About</a></div>
+          <div class="navlink"><a class="link" href="scoreBoard.html">ScoreBoard</a></div>
+        </div>
+      </header>
+      <main>
+        <div id="content">
+          <h1 class="myheader">Welcome To The Game Runner</h1>
+          <form class="prompt" action="index.html" method="post">
+            <h2 class="subHeader">Runner</h2>
+            <ul class="list" style="list-style-type:none">
+              <li class=input>
+                <label for="UserName" class="input text">UserName: </label>
+                <input type="text" class="input" id="UserName input" name="varUser" placeholder="UserName here" required
+                  pattern="[Aa].*" />
+              </li>
+              <li class=input>
+                <label for="Email" class="input text">Email: </label>
+                <input type="email" class="input" id="email input" name="varEmail" placeholder="email here" required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+              </li>
+              <li class=input>
+                <label for="password" class="input text">Password: </label>
+                <input type="password" class=input id="password input" name="varPassword" placeholder="password here" />
+              </li>
+            </ul>
+            <button type="submit" class="button">Submit</button>
+          </form>
+        </div>
+      </main>
+    </div>
+    <footer id="footer">
+      <p class="github text">Takun Purba: <a class="github link" href="https://github.com/tpurba/startup.git">GitHub</a>
+      </p>
     </footer>
-  </body>
+  </div>
+</body>
+
+</html>
