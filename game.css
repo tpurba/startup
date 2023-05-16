@@ -1,6 +1,55 @@
-*{
+* {
   background-color: darkgrey;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+header {
+  margin: 0;
+  flex: 0 50px;
+  font-size: 20px;
+  font-style: italic;
+  background: hsl(223, 57%, 38%);
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: start;
+  background-color: hsl(223, 57%, 38%);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.navlink {
+  background-color: hsl(223, 57%, 38%);
+  padding: 10px;
+}
+.link{
+  background-color: hsl(223, 57%, 38%);
+  color: azure;
+}
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.background {
+  width: 80vw;
+  height: 90vh;
+}
+
 .players {
   flex: 1;
   width: 100%;
@@ -25,90 +74,34 @@
 .system-event {
   color: purple;
 }
-header {
-    flex: 0 80px;
-    font-size: 20px;
-    background: hsl(223, 57%, 38%);
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-  }
-.title {
-  padding: 0 0.5em;
-  font-size: 40px;
-  background-color: hsl(223, 57%, 38%);
-  Color: white;
+
+footer{
+  flex: 0 50px; 
+  margin-top: auto;
+  background: hsl(180, 30%, 15%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid thin;
 }
 
-.game {
-    opacity: 1;
-    border: black solid thick;
-    width: 80vw;
-    height: 4557px0vw;
-    right: 10px;
-    bottom: 52px;
-    position: absolute;
-    min-width: 350px;
-    min-height: 350px;
-    max-width: min(80vmin, width);
-    max-height: min(80vmin, height);
-  }
-  .background
-  {
-    width: 80vw;
-    height: 40vw;
-    right: -5px;
-    bottom: -10px;  
-  }
-  .character
-  {
-    position: absolute;
-    bottom: 96px;
-    background-color: transparent;
-  }
-  .block
-  {
-    position: absolute;
-    bottom: 90px;
-    right: 20px;
-    background-color: transparent;
-  }
-  .ground{
-    position: absolute;
-    right: 10px;
-    bottom: 52px;
-    height: 100px;
-    width: 1546px;
-    background-color: 	#9b7653;
-  }
-  body {
-    margin: 0;
-  }
-  footer{
-    flex: 0 50px; 
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: hsl(180, 30%, 15%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: black solid thin;
-  }
-  .github{
-    background-color: hsl(180, 30%, 15%);
-    color: white;
-  }
-  @media (max-height: 600px) {
-    header {
-      display: none;
-    }
-    footer {
-      display: none;
-    }
-    main {
-      flex: 1 100vh;
-    }
-  } 
+#page-container {
+  height: 100vh;
+  min-height: 100%;
+  overflow: scroll !important;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#content-wrap {
+  height: fit-content;
+}
+
+#footer {
+  width: 100%;
+}
+.github {
+  background-color: hsl(180, 30%, 15%);
+  color: white;
+}

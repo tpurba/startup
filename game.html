@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,39 +8,44 @@
     <link rel="stylesheet" href="game.css" />
     <title>Runner</title>
 </head>
-<body>
-    <header>
-        <p class = "title">RUNNER</p>
-        <a class = "help title" href ="help.html">Help</a></div>
-        <a class = "scoreBoard title" href ="scoreBoard.html">scoreBoard</a>
-        <a class = "index title" href ="index.html">Login</a>
-    </header>
-    <div class = "game">
-        <img src="images/dino.png" class = "character"
-            height = "50" width = "50" alt="dino">
-        <img src="images/background.png" class = "background"
-            alt="purple hour">
-        
-        <img src="images/cactus.png" class="block"
-                height = "100" width = "50" alt="cactus">
-      
-    </div>
-    <div class="ground"></div>
 
-    <main class="liveUpdateBoard">
-        <div class="players">
-          Player
-          <span class="player-name">Mystery player</span>
-          <div id="player-messages">
-            <div class="event"><span class="player-event">James</span> scored 200</div>
-            <div class="event"><span class="player-event">Jessie</span> started a new game</div>
-            <div class="event"><span class="system-event">game</span> connected</div>
-          </div>
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <header>
+                <div id="navbar">
+                    <div class="navlink">RUNNER</div>
+                    <div class="navlink"><a class="link" href="help.html">Help</a></div>
+                    <div class="navlink"><a class="link" href="scoreBoard.html">scoreBoard</a></div>
+                    <div class="navlink"><a class="link" href="index.html">Login</a></div>
+                </div>
+            </header>
+            <main>
+                <div class="board">
+                    <div class="players">
+                        Player
+                        <span class="player-name">Mystery player</span>
+                        <div id="player-messages">
+                            <div class="event"><span class="player-event">James</span> scored 200</div>
+                            <div class="event"><span class="player-event">Jessie</span> started a new game</div>
+                            <div class="event"><span class="system-event">game</span> connected</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="game">
+                    <img src="images/dino.png" class="character" height="50" width="50" alt="dino">
+                    <img src="images/background.png" class="background" alt="purple hour">
+                    <img src="images/cactus.png" class="block" height="100" width="50" alt="cactus">
+                    <div class="ground"></div>
+                </div>
+                
+            </main>
         </div>
-    
-    
-    <footer>
-        <p class = "github text">Takun Purba: <a class ="github link" href ="https://github.com/tpurba/startup.git">GitHub</a></p>
-    </footer>
+        <footer>
+            <p class="github text">Takun Purba: <a class="github link"
+                    href="https://github.com/tpurba/startup.git">GitHub</a></p>
+        </footer>
+    </div>
 </body>
+
 </html>
