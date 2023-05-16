@@ -39,6 +39,7 @@ header {
 }
 
 .navlink {
+  font-style: italic;
   background-color: hsl(223, 57%, 38%);
   padding: 10px;
 }
