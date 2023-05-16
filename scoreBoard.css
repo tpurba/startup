@@ -44,3 +44,41 @@
     background-color: hsl(223, 57%, 38%);
     color: azure;
   }
+
+
+
+
+
+  footer{
+    flex: 0 50px; 
+    margin-top: auto;
+    background: hsl(180, 30%, 15%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: black solid thin;
+  }
+  
+  .github{
+    background-color: hsl(180, 30%, 15%);
+    color: white;
+    font-family: fantasy !important;
+    font-style: normal !important;
+  }
+  
+  #page-container {
+    height: 100vh;
+    min-height: 100%;
+    overflow: scroll !important;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  #content-wrap {
+    height: fit-content;
+  }
+  
+  #footer {
+    width: 100%;
+  }
