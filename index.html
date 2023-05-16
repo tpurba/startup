@@ -9,29 +9,29 @@
 </head>
 <body>
   <header>
-    <div>Login / Register</div>
-    <div><a class = "help button" href ="help.html">Help</a></div>
-    <div><a class="scoreBoard button" href ="scoreBoard.html">scoreBoard</a></div>
+    <div>Login</div>
+    <div><a class = "help button" href ="help.html">About</a></div>
+    <div><a class="scoreBoard button" href ="scoreBoard.html">ScoreBoard</a></div>
   </header>
-  <h1 class="game title">Welcome To The Game Runner</h1>
+  <h1 class="game-title">Welcome To The Game Runner</h1>
     <form class = "Login prompt"action="index.html" method="post">
-      <h2 class = "login title">Runner</h2>
-      <ul>
-        <li>
-          <label for="UserName">UserName: </label>
-          <input type="text" id="UserName" name="varUser" placeholder="UserName here" required pattern="[Aa].*" />
+      <h2 class = "login-title">Runner</h2>
+      <ul class = "list">
+        <li class = input>
+          <label for="UserName" class ="input text">UserName: </label>
+          <input type="text" class = "input" id="UserName input" name="varUser" placeholder="UserName here" required pattern="[Aa].*" />
         </li>
-        <li>
-            <label for="Email">Email: </label>
-            <input type="email" id="email" name="varEmail" placeholder="email here" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <li class = input>
+            <label for="Email" class ="input text">Email: </label>
+            <input type="email" class = "input" id="email input" name="varEmail" placeholder="email here" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
           </li>
-        <li>
-          <label for="password">Password: </label>
-          <input type="password" id="password" name="varPassword" placeholder="password here"/>
+        <li class = input>
+          <label for="password" class ="input text">Password: </label>
+          <input type="password" class = input id="password input" name="varPassword" placeholder="password here"/>
         </li>
       </ul>
   
-      <button type="submit">Submit</button>
+      <button type="submit" class="input">Submit</button>
     </form>
     <footer>
         

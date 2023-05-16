@@ -1,5 +1,6 @@
 *{
-    background-color: azure;
+    background-color: lightgoldenrodyellow;
+    font-family: fantasy;
 }
 header {
     flex: 0 50px;
@@ -24,23 +25,35 @@ div {
 .prompt
 {
     margin: auto;
-    width: 300px; 
-    height: 200px; 
+    width: 500px; 
+    height: 400px; 
+    font-size: 30px;
     flex: 1;
     position: absolute; 
+    background-color: azure;
     left: 0; 
     right: 0; 
     top: 0; 
     bottom: 0; 
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: solid thin black;
 }
-.title{
+.login-title{
+  background-color: azure;
+}
+.input{
+  background-color: azure;
+}
+.list{
+  background-color: azure;
+}
+.game-title{
+  font-size: 50px;
   text-align: center;
+  color: purple;
 }
 body {
     margin: 0;
@@ -62,3 +75,17 @@ footer{
     align-items: center;
     border: red solid thin;
   }
+  @media (max-height: 700px){
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    .prompt {
+      flex: 1 100vh;
+    }
+    .game-title{
+      flex: 1 100vh;
+    }
+  } 
