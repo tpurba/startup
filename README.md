@@ -48,3 +48,10 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 	• Login - Login layout created 
 	• Database- database place holder located in the scoreboard.html where the information will be stored and displayed 
 	• WebSocket- websocket place holder located in the game.html for live updates to user. 
+
+## CSS Deliverable
+ 	• HTML Pages-Formated the below pages
+		○ index.html-formatted header/footer/login
+		○ scoreBoard.html- formatted header/footer/score board
+		○ game.html-formatted header/footer/game layout/ notification texts
+		○ help.html- formatted header/footer/image/text
