@@ -55,3 +55,4 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 		○ scoreBoard.html- formatted header/footer/score board
 		○ game.html-formatted header/footer/game layout/ notification texts
 		○ help.html- formatted header/footer/image/text
+	
