@@ -170,10 +170,26 @@ makes text look bigger
 
 ## example of SVG
 
+SVG is an extremely powerful and widely supported way to render graphics inline in your HTML. An example SVG graphic that draws a black border and a red circle looks like this:
+
 ```
 <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="red" style="border: 1px solid #000000">
   <circle cx="150" cy="100" r="50" />
 </svg>
+```
+## example of canvas 
+The canvas element was introduced to HTML in order to facilitate 2D drawing and animation. The HTML for the canvas element is fairly simple, but actually drawing on the canvas requires JavaScript support. Here again, is our simple red dot example.
+```
+<canvas id="canvasDemo" width="300" height="200" style="border: 1px solid #000000"></canvas>
+<script>
+  const ctx = document.getElementById('canvasDemo').getContext('2d');
+  ctx.beginPath();
+  ctx.arc(150, 100, 50, 0, 2 * Math.PI);
+  ctx.fillStyle = 'red';
+  ctx.strokeStyle = 'red';
+  ctx.fill();
+  ctx.stroke();
+</script>
 ```
 
 
