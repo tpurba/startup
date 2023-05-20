@@ -1,4 +1,7 @@
-# What I learned in boating school is...
+# What I learned in CS260...
+# HTML Notes 
+[HTML Notes](htmlNotes.md)
+
 # Github tutorials
 ```
 Pull the repository's latest changes from GitHub (git pull)
@@ -29,128 +32,5 @@ Fast-forward
  git push
  ```
  
- ## example of setting color option input 
- ```
- <li>
-        <label for="color">Color: </label>
-        <input type="color" value="#ff0000" name="varColor" id="color" />
-      </li>
- ```
- The value variable is what makes the default color whatever you want it to be 
-
- ## example of adding in a image to the html
-```
-<aside>
-      <p>Aside</p>
-        <img src="https://i.natgeofe.com/n/63527567-9a8b-4b08-819d-a6142fb2b350/aurora-kirkjufell-iceland_square.jpg" 
-             height = "200" width = "200" alt="Nothern Lights">
-    </aside>
-```
-The site here is what allows you to add the image and should be something found from the web and you just right click the image and copy the image url.
-
-## example of adding in hyper link 
-```
-<div><a href="https://byu.edu/" target="_blank">BYU</a> </div>
-```
-Put in the url without www and also make sure to add target blank here since the code pen does not like it when it takes a person to a site that is not related to code pen
-## example of a list 
-```
-<section>
-      <p>Section</p>
-      <ul>
-        <li>apples</li>
-        <li>bananas</li>
-        <li>oranges</li>
-      </ul>
-    </section>
-```
-## example of a table
-```
-<section>
-      <p>Section</p>
-      <table>
-        <tr>
-          <th>Table</th>
-          <th>Table</th>
-          <th>Table</th>
-        </tr>
-        <tr>
-          <td>table</td>
-          <td>table</td>
-          <td>table</td>
-        </tr>
-        <tr>
-          <td>HTML</td>
-          <td>CSS</td>
-          <td>JavaScript</td>
-        </tr>
-      </table>
-    </section>
-```
-## example of a header 
-```
-<h1>Takun Purba</h1>
-```
-makes text look bigger
-
-## example of a check box 
-```
-<li>
-        <fieldset>
-          <legend>checkbox</legend>
-          <label for="checkbox1">checkbox1</label>
-          <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
-          <label for="checkbox2">checkbox2</label>
-          <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
-          <label for="checkbox3">checkbox3</label>
-          <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
-        </fieldset>
-      </li>
-```
-
-## example of a radio box 
-```
-<li>
-        <fieldset>
-          <legend>radio</legend>
-          <label for="radio1">radio1</label>
-          <input type="radio" id="radio1" name="varRadio" value="radio1" checked />
-          <label for="radio2">radio2</label>
-          <input type="radio" id="radio2" name="varRadio" value="radio2" />
-          <label for="radio3">radio3</label>
-          <input type="radio" id="radio3" name="varRadio" value="radio3" />
-        </fieldset>
-      </li>
-```
-
-## example of a canvas code 
-
-```
-<canvas id="canvasDemo" width="300" height="200" style="border: 1px solid #000000"></canvas>
-<script>
-  const ctx = document.getElementById('canvasDemo').getContext('2d');
-  ctx.beginPath();
-  ctx.arc(150, 100, 50, 0, 2 * Math.PI);
-  ctx.fillStyle = 'red';
-  ctx.strokeStyle = 'red';
-  ctx.fill();
-  ctx.stroke();
-</script>
-```
-
-## example of video 
-
-```
-<video controls width="300" crossorigin="anonymous">
-  <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
-</video>
-```
-
-## example of SVG
-
-```
-<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="red" style="border: 1px solid #000000">
-  <circle cx="150" cy="100" r="50" />
-</svg>
-```
+ 
 
