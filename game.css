@@ -79,6 +79,17 @@ main{
 .animate{
   animation: jump .5s linear 0s;
 }
+.grid{
+  position: relative;
+}
+.boxbox{
+  position: absolute;
+  bottom: 37px; 
+  width: 60px;
+  height: 60px;
+  right: 0;
+  background-color: orange !important;
+}
 
 .obstacle{
   position: absolute;
@@ -147,6 +158,6 @@ footer{
 }
 @keyframes block {
   0%{right: 0px;}
-  100%{right:80vw;}
+  100%{right:80vw;} 
   
 }
