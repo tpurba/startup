@@ -55,3 +55,9 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 		○ scoreBoard.html- formatted header/footer/score board
 		○ game.html-formatted header/footer/game layout/ notification texts
 		○ help.html- formatted header/footer/image/text
+### Java Script Deliverable 
+	• For this deliverable I made the dino game playable
+		○ login- When you press the submit button it takes you to the game.html page where you play the dino game
+		○ database - wrote psudo code for the database implementation that will be done in the future in game.css function addResult and scores.js
+		○ WebSocket - wrote psudo code for the websocket implementation as I do not know how it really works in game.css
+		○ application logic- dino game is playable where if you press the space bar the dinosaur will jump
