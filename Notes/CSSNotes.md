@@ -17,6 +17,8 @@
   <p>CSS</p>
 </body>
 ```
+## CSS OverView 
+<img src="notesImages/CSSBorders.png"  alt="Borders">
 
 ### link html with CSS 
 ```
@@ -29,7 +31,8 @@
  Selector calls:   
  .(name of class)- call a class  
  #(name of id )- call a id  
- attribute selector: Selects a body like p that has a certain attribute example being summary   
+ attribute selector: Selects a body like p that has a certain attribute example being summary      
+ Example: p.summary would be how you call the below code.
  ```
  p[class='summary'] {
   color: red;
@@ -114,7 +117,8 @@ aside {
 }
 ```
 Code lets us have a aside area and when we scale the screen down or bigger then the text wraps the area depending on which way you wrote the float if its right then the aside area is on the right and the text is on the left. Note: none does nothing.
-
+### Padding: 
+Padding puts space around content of the selected elements. 
 
 ## Media query 
 dynamically detects the size and orientation of the device and applies CSS rules to represent the structure of the HTML in a way that accommodates the change. A media query takes one or more predicates separated by boolean operators.
@@ -221,5 +225,6 @@ Code tells the website to not scale the page
 ```
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 ```
+
 
 
