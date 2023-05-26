@@ -243,3 +243,8 @@ The canvas element was introduced to HTML in order to facilitate 2D drawing and 
 ### Picture Of The Spacing 
 
 <img src="notesImages/HTMLrelation.png"  alt="spacing">
+
+## example of Adding events to elements 
+```
+<button onclick="handleClick()">Click Me</button>
+```

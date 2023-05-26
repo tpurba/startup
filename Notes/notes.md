@@ -1,5 +1,8 @@
 # What I learned in CS260...
 
+# Webservice 
+[Web Service](WebserviceNotes.md)
+
 # Github tutorials
 [Git and console](gitConsole.md)
 
@@ -9,10 +12,8 @@
 # CSS Notes 
 [CSS Notes](CSSNotes.md)
 
-# Webservice 
-[Web Service](WebserviceNotes.md)
-
-
+# JavaScript 
+[Java Script Notes](JavaScript.md)
 
 # Misc Notes
 [Misc.](Misc.md)
