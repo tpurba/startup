@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css" />
+
+  <script src="index.js"></script>
   <title>Runner</title>
 </head>
 
@@ -15,22 +17,22 @@
       <header>
         <div id="navbar">
           <div class="navlink">Login</div>
-          <div class="navlink"><a  class ="link" href="help.html">About</a></div>
+          <div class="navlink"><a class="link" href="help.html">About</a></div>
           <div class="navlink"><a class="link" href="scoreBoard.html">ScoreBoard</a></div>
+          <div class="navlink"><a class="link" href="game.html"> Game </a></div>
         </div>
       </header>
       <main>
         <div id="content">
           <h1 class="myheader">Welcome To The Game Runner</h1>
-          <form class="prompt" action="index.html" method="post">
+          <div class="prompt">
             <h2 class="subHeader">Runner</h2>
             <ul class="list" style="list-style-type:none">
               <li class=input>
                 <label for="UserName" class="input text">UserName: </label>
-                <input type="text" class="input" id="UserName input" name="varUser" placeholder="UserName here" required
-                  pattern="[Aa].*" />
+                <input type="text" class="input" id="userName" name="varUser" placeholder="UserName here" />
               </li>
-              <li class=input>
+              <!-- <li class=input>
                 <label for="Email" class="input text">Email: </label>
                 <input type="email" class="input" id="email input" name="varEmail" placeholder="email here" required
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
@@ -38,10 +40,10 @@
               <li class=input>
                 <label for="password" class="input text">Password: </label>
                 <input type="password" class=input id="password input" name="varPassword" placeholder="password here" />
-              </li>
+              </li> -->
             </ul>
-            <button type="submit" class="button">Submit</button>
-          </form>
+            <button type="submit" class="button" onclick="login()">Submit</button>
+          </div>
         </div>
       </main>
     </div>

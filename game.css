@@ -47,6 +47,9 @@ main{
 }
 .game-container{
   position: relative;
+  width: 80vw;
+  height: 80vh;
+  overflow-x: hidden;
   display: inline-block;
 
 }
@@ -88,7 +91,6 @@ main{
   width: 60px;
   height: 60px;
   right: 0;
-  background-color: orange !important;
 }
 
 .obstacle{
@@ -159,5 +161,5 @@ footer{
 @keyframes block {
   0%{right: 0px;}
   100%{right:80vw;} 
-  
+  /* overflow-x: hidden; */
 }
