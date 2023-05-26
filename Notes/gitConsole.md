@@ -33,3 +33,7 @@ Fast-forward
  ```
  git push
  ```
+
+ ## Console Code Executable 
+  chmod+x deploy.sh allows you to run a javascript 
+  
