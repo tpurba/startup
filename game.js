@@ -103,11 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-// websocket function 
-// Have it be a setinterval that will update the list every 20 miliseconds 
-// access it websocket and get data 
-// have the websocket id ready for use 
-// add on to the websocket parent class using div 
+
 
 
   let isAlive = setInterval(function () {
@@ -125,5 +121,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function addResult(score, userName){
     //add to the database the score 
   }
-
+  //temporary that mimicks WebSocket 
+  setInterval(() => {
+    const score = Math.floor(Math.random() * 3000);
+    const chatText = document.querySelector('#player-messages');
+    chatText.innerHTML =
+      `<div class="event"><span class="player-event">Bint</span> scored ${score}</div>` + chatText.innerHTML;
+  }, 5000);
+// websocket function 
+// Have it be a setinterval that will update the list every 20 miliseconds 
+// access it websocket and get data 
+// have the websocket id ready for use 
+// add on to the websocket parent class using div 
 }); 
