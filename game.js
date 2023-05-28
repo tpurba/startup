@@ -12,11 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   function getPlayerName() {
-    return localStorage.getItem('userName') ?? 'Mystery player';
+    if(localStorage.getItem('userName') === ''){
+      return 'MysteryPlayer';
+    }
+    else{
+      return localStorage.getItem('userName');
+    }
   }
-  const playerNameEl = document.querySelector('.player-name');
-  playerNameEl.textContent = getPlayerName();
 
+  const playerNameEl = document.querySelector('.player-name');
+  console.log("before get playerName");
+  playerNameEl.textContent = getPlayerName();
+  console.log("after get playerName");
   function jump() {
     if (isJumping) {
       return;
@@ -109,17 +116,63 @@ document.addEventListener('DOMContentLoaded', () => {
   let isAlive = setInterval(function () {
     var isCollision = checkCollision(dino, cactus);
     if (isCollision) {
+      clearInterval();
       alert("Game Over \n Refresh the page to try again! \n Score:" + score);
       //store the score and the players userName together for database 
-      addResult(score, playerNameEl.textContent);
+      console.log("GameOver");
+      saveScore(score);
       score = 0;
+      
     }
 
   }, 10);
 
   //access database 
-  function addResult(score, userName){
-    //add to the database the score 
+  function saveScore(score) 
+  {
+    console.count('saveScore');
+    const userName = getPlayerName();
+    let scores = [];
+    console.log("before:");
+    for (let i = 0; i < scores.length; i++) {
+      console.log(scores[i]);
+    }
+    const scoresText = localStorage.getItem('scores');
+    if (scoresText) {
+      scores = JSON.parse(scoresText);
+    }
+    console.log("After:");
+    for (let i = 0; i < scores.length; i++) {
+      console.log(scores[i]);
+    }
+    scores = updateScores(userName, score, scores);
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+  }
+
+  function updateScores(userName, score, scores) 
+  {
+    const date = new Date().toLocaleDateString();
+    const newScore = { name: userName, score: score, date: date };
+
+    let found = false;
+    for (const [i, prevScore] of scores.entries()) {
+      if (score > prevScore.score) {
+        scores.splice(i, 0, newScore);
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      scores.push(newScore);
+    }
+
+    if (scores.length > 10) {
+      scores.length = 10;
+    }
+
+    return scores;
   }
   //temporary that mimicks WebSocket 
   setInterval(() => {
@@ -133,4 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // access it websocket and get data 
 // have the websocket id ready for use 
 // add on to the websocket parent class using div 
+
+
+
+
 }); 

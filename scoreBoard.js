@@ -1,9 +1,36 @@
-//This will be where we acess the database
 function loadScores() {
-    //get the scores from the database using Json parse and hold it in a variable 
-    //for loop it 
-    //create a child of the parent node and attach the element fields to it 
-    
+  console.log("In loadScores");
+  let scores = [];
+  const scoresText = localStorage.getItem('scores');
+  if (scoresText) {
+    scores = JSON.parse(scoresText);
   }
-  
-  loadScores();
+
+  const tableBodyEl = document.querySelector('#scores');
+
+  if (scores.length) {
+    for (const [i, score] of scores.entries()) {
+      const positionTdEl = document.createElement('td');
+      const nameTdEl = document.createElement('td');
+      const scoreTdEl = document.createElement('td');
+      const dateTdEl = document.createElement('td');
+
+      positionTdEl.textContent = i + 1;
+      nameTdEl.textContent = score.name;
+      scoreTdEl.textContent = score.score;
+      dateTdEl.textContent = score.date;
+
+      const rowEl = document.createElement('tr');
+      rowEl.appendChild(positionTdEl);
+      rowEl.appendChild(nameTdEl);
+      rowEl.appendChild(scoreTdEl);
+      rowEl.appendChild(dateTdEl);
+
+      tableBodyEl.appendChild(rowEl);
+    }
+  } else {
+    tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to score</td></tr>';
+  }
+}
+
+loadScores();
