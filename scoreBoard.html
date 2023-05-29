@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="scoreBoard.css" />
-  <script src="scoreBoard.js"></script>
+  
   <title>Document</title>
 </head>
 
@@ -24,13 +24,15 @@
       <main>
         <div class="table-container">
           <table class="scoreBoard">
-            <tr class="heading">
-              <th class="tabel-head">Rank</th>
-              <th class="tabel-head">UserName</th>
-              <th class="tabel-head">Score</th>
-            </tr>
-            <tbody id = "scores">
-            </tbody>
+            <thead>
+              <tr class="heading">
+                <th>Rank</th>
+                <th>UserName</th>
+                <th>Score</th>
+                <th> Date</th>
+              </tr>
+            </thead>
+            <tbody id="scores"></tbody>
           </table>
         </div>
       </main>
@@ -39,6 +41,7 @@
       <p class="github">Takun Purba: <a class="github" href="https://github.com/tpurba/startup.git">GitHub</a></p>
     </footer>
   </div>
+  <script src="scoreBoard.js"></script>
 </body>
 
 </html>
