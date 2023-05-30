@@ -75,3 +75,65 @@ Understanding the meaning of the common HTTP verbs, status codes, and headers is
 
 ### CORS 
 CORS allows the client (e.g. browser) to specify the origin of a request and then let the server respond with what origins are allowed   
+
+## Fetch 
+fetch function allows you to make http requests in java script.   
+The basic usage of fetch takes a URL and returns a promise. The promise then function takes a callback function that is asynchronously called when the requested URL content is obtained. If the returned content is of type application/json you can use the json function on the response object to convert it to a JavaScript object.
+
+### Example of Java Script code: 
+```
+fetch('https://api.quotable.io/random')
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+```
+### Example of output:
+```
+{
+  content: 'Never put off till tomorrow what you can do today.',
+  author: 'Thomas Jefferson',
+};
+```
+
+### Example of post request: 
+```
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'test title',
+    body: 'test body',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((jsonResponse) => {
+    console.log(jsonResponse);
+  });
+```
+
+## Node 
+You can use node in console to execute java script 
+```
+➜  node -e "console.log(1+1)"
+2
+```
+```
+➜ node
+Welcome to Node.js v16.15.1.
+> 1+1
+2
+> console.log('hello')
+hello
+```
+
+## Express 
+In the previous instruction you saw how to use Node.js to create a simple web server. This works great for little projects where you are trying to quickly serve up some web content, but to build a production ready application you need a framework with a bit more functionality for easily implementing a full web service. This is where the Node package Express come in. Express provides support for:
+
+-Routing requests for service endpoints   
+-Manipulating HTTP requests with JSON body content    
+-Generating HTTP responses   
+-Using middleware to add functionality  
