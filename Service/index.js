@@ -9,18 +9,17 @@ app.use(express.json());
 
 // Serve up the front-end static content hosting
 app.use(express.static('public'));
-
-// Router for service endpoints
-var apiRouter = express.Router();
-app.use(`/api`, apiRouter);
+//sb for score board
+var sbRouter = express.Router();
+app.use(`/sb`, sbRouter);
 
 // GetScores
-apiRouter.get('/scores', (_req, res) => {
+sbRouter.get('/scores', (_req, res) => {
   res.send(scores);
 });
 
 // SubmitScore
-apiRouter.post('/score', (req, res) => {
+sbRouter.post('/score', (req, res) => {
   scores = updateScores(req.body, scores);
   res.send(scores);
 });

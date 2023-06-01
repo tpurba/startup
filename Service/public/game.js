@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 document.addEventListener('DOMContentLoaded', () => {
   const dino = document.querySelector('.dino');
   const cactus = document.querySelector('.obstacle');
@@ -90,42 +92,42 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log("GameOver");
       saveScore(score);
       score = 0;
-
     }
 
   }, 10);
 
   //access database 
-  function saveScore(score) {
+  async function saveScore(score) {
+    //get the variables needed for score 
     const userName = getPlayerName();
-    let scores = [];
-    const scoresText = localStorage.getItem('scores');
-    if (scoresText) {
-      scores = JSON.parse(scoresText);
+    const date = new Date().toLocaleDateString();
+    //create the variable new score 
+    const newScore = { name: userName, score: score, date: date };
+    //get the high score array from the database 
+    try {
+      //Post the scores send score to the server
+      const response = await fetch('/sb/score', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(newScore),
+      });
+
+       
+      const scores = await response.json();//use response of json to make the scores array
+
+      localStorage.setItem('scores', JSON.stringify(scores));// store locally as well
+    } catch {
+      // If there was an error then just track scores locally
+      this.updateScoresLocal(newScore);
     }
-    console.log("Score list Length:" + scores.length);
-    //if there high score board isnt full 
-    if (scores.length < 10) {
-      console.log("list has room");
-      scores = updateScores(userName, score, scores);
-    }
-    //high score board is full
-    else {
-      //check the 10th place score and if it is less then update.
-      if (scores[9].score < score) {
-        console.log("Your score made it");
-        scores = updateScores(userName, score, scores);
-      }
-      else{
-        console.log("Your score didnt make it");
-      }
-    }
-    localStorage.setItem('scores', JSON.stringify(scores));
   }
 
-  function updateScores(userName, score, scores) {
-    const date = new Date().toLocaleDateString();
-    const newScore = { name: userName, score: score, date: date };
+  function updateScores(newScore) {
+    let scores = [];
+    const scoresText = localStorage.getItem('scores');
+    if(scoresText){
+      scores = JSON.parse(scoresText);
+    }
 
     let found = false;
     for (const [i, prevScore] of scores.entries()) {
@@ -135,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
       }
     }
-
+    //may be not needed???
     if (!found) {
       scores.push(newScore);
     }
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scores.length = 10;
     }
 
-    return scores;
+    localStorage.setItem('scores', JSON.stringify(scores));
   }
   //temporary that mimicks WebSocket 
   setInterval(() => {
