@@ -3,19 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const cactus = document.querySelector('.obstacle');
   const grid = document.querySelector('.grid');
   const scoreDisplay = document.querySelector('.score');
-  const playerName = document.querySelector('.player-name');  
+  const playerName = document.querySelector('.player-name');
   let bottom = 0;
   let gravity = 0.9;
   let score = 0;
   let isJumping = false;
   let isGameOver = false;
-  
+
 
   function getPlayerName() {
-    if(localStorage.getItem('userName') === ''){
+    if (localStorage.getItem('userName') === '') {
       return 'MysteryPlayer';
     }
-    else{
+    else {
       return localStorage.getItem('userName');
     }
   }
@@ -57,41 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //if key is pressed it goes to control function 
   document.addEventListener('keydown', control);
-
-  // function generateSquare() {
-  //   let randomTime = Math.random() * 4000;
-  //   let squarePosition = 1000;
-  //   const square = document.createElement('div');
-  //   square.appendChild(imageElement);
-  //   if (!isGameOver) {
-  //     square.classList.add('boxbox');
-  //   }
-  //   grid.appendChild(square);
-  //   square.style.left = squarePosition + 'px';
-  //   let timerId = setInterval(function () {
-  //     if (squarePosition > 0 && squarePosition < 60 && bottom < 80) {
-  //       clearInterval(timerId);
-  //       alert("Game Over \n Refresh the page to try again! \n Score: " + score);
-  //       //remove all the children 
-  //       while (grid.firstChild) {
-  //         grid.removeChild(grid.lastChild);
-  //       }
-  //       isGameOver = false; // change back to true
-  //     }
-  //     if (squarePosition < 0 && grid.contains(square)) {
-  //       grid.removeChild(square);
-  //     }
-  //     squarePosition -= 10;
-  //     square.style.left = squarePosition + 'px';
-
-  //   }, 20)
-  //   if (!isGameOver) {
-  //     setTimeout(generateSquare, randomTime);
-  //   }
-  // }
-  // generateSquare();
-  let timerIdSocre = setInterval(function (){
-    if(!isGameOver){
+  //counts score 
+  let timerIdSocre = setInterval(function () {
+    if (!isGameOver) {
       score += 1;
       scoreDisplay.textContent = Math.floor(score);
     }
@@ -100,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkCollision(object1, object2) {
     var rect1 = object1.getBoundingClientRect();
     var rect2 = object2.getBoundingClientRect();
-  
+
     // Check for collision
     return (
       rect1.left < rect2.right &&
@@ -122,36 +90,40 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log("GameOver");
       saveScore(score);
       score = 0;
-      
+
     }
 
   }, 10);
 
   //access database 
-  function saveScore(score) 
-  {
-    console.count('saveScore');
+  function saveScore(score) {
     const userName = getPlayerName();
     let scores = [];
-    console.log("before:");
-    for (let i = 0; i < scores.length; i++) {
-      console.log(scores[i]);
-    }
     const scoresText = localStorage.getItem('scores');
     if (scoresText) {
       scores = JSON.parse(scoresText);
     }
-    console.log("After:");
-    for (let i = 0; i < scores.length; i++) {
-      console.log(scores[i]);
+    console.log("Score list Length:" + scores.length);
+    //if there high score board isnt full 
+    if (scores.length < 10) {
+      console.log("list has room");
+      scores = updateScores(userName, score, scores);
     }
-    scores = updateScores(userName, score, scores);
-
+    //high score board is full
+    else {
+      //check the 10th place score and if it is less then update.
+      if (scores[9].score < score) {
+        console.log("Your score made it");
+        scores = updateScores(userName, score, scores);
+      }
+      else{
+        console.log("Your score didnt make it");
+      }
+    }
     localStorage.setItem('scores', JSON.stringify(scores));
   }
 
-  function updateScores(userName, score, scores) 
-  {
+  function updateScores(userName, score, scores) {
     const date = new Date().toLocaleDateString();
     const newScore = { name: userName, score: score, date: date };
 
@@ -181,11 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
     chatText.innerHTML =
       `<div class="event"><span class="player-event">Bint</span> scored ${score}</div>` + chatText.innerHTML;
   }, 5000);
-// websocket function 
-// Have it be a setinterval that will update the list every 20 miliseconds 
-// access it websocket and get data 
-// have the websocket id ready for use 
-// add on to the websocket parent class using div 
+  // websocket function 
+  // Have it be a setinterval that will update the list every 20 miliseconds 
+  // access it websocket and get data 
+  // have the websocket id ready for use 
+  // add on to the websocket parent class using div 
 
 
 
