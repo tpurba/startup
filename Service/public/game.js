@@ -1,4 +1,3 @@
-const { response } = require("express");
 
 document.addEventListener('DOMContentLoaded', () => {
   const dino = document.querySelector('.dino');
@@ -122,22 +121,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function updateScores(newScore) {
+  function updateScoresLocal(newScore) {
     let scores = [];
     const scoresText = localStorage.getItem('scores');
-    if(scoresText){
+    if (scoresText) {
       scores = JSON.parse(scoresText);
     }
 
     let found = false;
     for (const [i, prevScore] of scores.entries()) {
-      if (score > prevScore.score) {
+      if (newScore > prevScore.score) {
         scores.splice(i, 0, newScore);
         found = true;
         break;
       }
     }
-    //may be not needed???
+
     if (!found) {
       scores.push(newScore);
     }
@@ -148,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     localStorage.setItem('scores', JSON.stringify(scores));
   }
+
   //temporary that mimicks WebSocket 
   setInterval(() => {
     const score = Math.floor(Math.random() * 3000);

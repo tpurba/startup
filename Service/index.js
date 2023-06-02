@@ -15,11 +15,13 @@ app.use(`/sb`, sbRouter);
 
 // GetScores
 sbRouter.get('/scores', (_req, res) => {
+  console.log("in get");
   res.send(scores);
 });
 
 // SubmitScore
 sbRouter.post('/score', (req, res) => {
+  console.log("in post");
   scores = updateScores(req.body, scores);
   res.send(scores);
 });
@@ -37,6 +39,7 @@ app.listen(port, () => {
 // The high scores are saved in memory and disappear whenever the service is restarted.
 let scores = [];
 function updateScores(newScore, scores) {
+  console.log("in update");
   let found = false;
   for (const [i, prevScore] of scores.entries()) {
     if (newScore.score > prevScore.score) {
