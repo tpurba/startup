@@ -111,17 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify(newScore),
       });
 
-       
       const scores = await response.json();//use response of json to make the scores array
 
       localStorage.setItem('scores', JSON.stringify(scores));// store locally as well
     } catch {
       // If there was an error then just track scores locally
-      this.updateScoresLocal(newScore);
+      updateScoresLocal(newScore);
+      console.log("Error occured saving score to local")
     }
   }
 
   function updateScoresLocal(newScore) {
+    console.log("Updating local storage data");
     let scores = [];
     const scoresText = localStorage.getItem('scores');
     if (scoresText) {
