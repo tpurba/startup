@@ -115,7 +115,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   });
 ```
 
-## Node 
+## Node.js
 You can use node in console to execute java script 
 ```
 ➜  node -e "console.log(1+1)"
@@ -137,3 +137,10 @@ In the previous instruction you saw how to use Node.js to create a simple web se
 -Manipulating HTTP requests with JSON body content    
 -Generating HTTP responses   
 -Using middleware to add functionality  
+BASICALLY: Express allows you to write code easier for routings.
+## PM2
+We want our web services to continue running as a daemon. We would also like an easy way to start and stop our services. That is what Process Manager 2 (PM2) does.
+<img src="notesImages/PM2.png"  alt="PM2">
+
+## Daemon
+In order to keep programs running after a shutdown you need to register it as a daemon. The term daemon comes from the idea of something that is always there working in the background. Hopefully you only have good daemons running in your background.
