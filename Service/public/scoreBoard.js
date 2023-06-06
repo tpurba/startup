@@ -6,7 +6,7 @@ async function loadScores() {
     console.log("getting from server..");
     const response = await fetch('/sb/scores');
     scores = await response.json();
-
+    console.log(scores);
     // Save the scores in case we go offline in the future
     localStorage.setItem('scores', JSON.stringify(scores));
   } catch {
