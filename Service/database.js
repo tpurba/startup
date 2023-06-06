@@ -16,6 +16,7 @@ const scoreCollection = db.collection('score');
 });
 
 async function addScore(score) {
+  console.log("adding scores");
   const result = await scoreCollection.insertOne(score);
   return result;
 }
