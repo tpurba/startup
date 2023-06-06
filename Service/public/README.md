@@ -67,3 +67,9 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 -Calls to third party endpoints - Not done yet 
 -Backend service endpoints - Adds scores to the server array and retrieves them to display scores 
 -Frontend calls service endpoints - uses fetch to get data from the server and displays scores on Scoreboard. 
+
+### DB deliverable 
+For this deliverable I stored and retrieved data from MongoDB.
+-MongoDB Atlas database created - done!
+-Endpoints for data - Through the router endpoints I request and get data from the database. 
+-Stores data in MongoDB - done!
