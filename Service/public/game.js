@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const dino = document.querySelector('.dino');
-  const cactus = document.querySelector('.obstacle');
+  const cactus = document.querySelector('.cactus');
   const grid = document.querySelector('.grid');
   const scoreDisplay = document.querySelector('.score');
   const playerName = document.querySelector('.player-name');
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (bottom > 170) {
         clearInterval(timerUpId);
         let timerDownId = setInterval(function () {
-          if (bottom < 50) {
+          if (bottom < 10) {
             clearInterval(timerDownId);
             isJumping = false;
           }
