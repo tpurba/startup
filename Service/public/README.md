@@ -1,7 +1,7 @@
 # **Runner**
 ## **Deliverable specification**
+NOTE: All the code for this readme file is in Service folder. 
 ### **Elevator pitch**
-
 Did the internet connection ever go out on your chrome browser and you were stuck without WI-FI playing the dinosaur game as you jump over cacti and under pterodactyls? I know I have and I know many of us have played the game. Well let me tell you I have made a new game that reimagines the same feeling of playing the dinosaur game with color in a vibrant background where you can race against everyone else around the world and have rivals in the game that you try to beat. Why not try it out? 
 
 ### **Design**
@@ -61,3 +61,9 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 		○ database - wrote psudo code for the database implementation that will be done in the future in game.css function addResult and scores.js
 		○ WebSocket - wrote psudo code for the websocket implementation as I do not know how it really works in game.css
 		○ application logic- dino game is playable where if you press the space bar the dinosaur will jump
+### Service Deliverable 
+-Node.js/Express HTTP service - done!
+-Static middleware for frontend - done!
+-Calls to third party endpoints - Not done yet 
+-Backend service endpoints - Adds scores to the server array and retrieves them to display scores 
+-Frontend calls service endpoints - uses fetch to get data from the server and displays scores on Scoreboard. 
