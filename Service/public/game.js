@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //get the high score array from the database 
     try {
       //Post the scores send score to the server
-      const response = await fetch('/sb/score', {
+      const response = await fetch('/api/score', {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(newScore),
