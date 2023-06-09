@@ -28,7 +28,7 @@ app.use(`/api`, apiRouter);
 // CreateAuth token for a new user
 apiRouter.post('/auth/create', async (req, res) => {
   if (await DB.getUser(req.body.email)) {
-    res.status(409).send({ msg: 'Existing user' });
+    res.status(409).send({ msg: 'Existing user'});
   } else {
     const user = await DB.createUser(req.body.email, req.body.password);
 
@@ -106,7 +106,7 @@ app.use(function (err, req, res, next) {
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'Service/public' });
+  res.sendFile('index.html', { root:'public'});
 });
 
 // setAuthCookie in the HTTP response

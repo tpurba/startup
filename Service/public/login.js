@@ -25,6 +25,8 @@ async function createUser() {
 async function loginOrCreate(endpoint) {
   const userName = document.querySelector('#userName')?.value;
   const password = document.querySelector('#userPassword')?.value;
+  console.log(userName);
+  console.log(password);
   const response = await fetch(endpoint, {
     method: 'post',
     body: JSON.stringify({ email: userName, password: password }),
@@ -34,6 +36,7 @@ async function loginOrCreate(endpoint) {
   });
 
   if (response.ok) {
+    console.log("response was ok");
     localStorage.setItem('userName', userName);
     window.location.href = 'play.html';
   } else {
@@ -47,7 +50,7 @@ async function loginOrCreate(endpoint) {
 }
 
 function play() {
-  window.location.href = 'play.html';
+  window.location.href = 'game.html';
 }
 
 function logout() {
