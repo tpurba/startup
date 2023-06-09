@@ -5,7 +5,7 @@ const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
-const db = client.db('simon');
+const db = client.db('dino');
 const userCollection = db.collection('user');
 const scoreCollection = db.collection('score');
 
@@ -45,7 +45,7 @@ function addScore(score) {
 }
 
 function getHighScores() {
-  const query = { score: { $gt: 0, $lt: 900 } };
+  const query = { score: { $gt: 0, $lt: 999999 } };
   const options = {
     sort: { score: -1 },
     limit: 10,
