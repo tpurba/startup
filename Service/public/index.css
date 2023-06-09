@@ -58,7 +58,7 @@ header {
   justify-content: center;
 }
 
-.prompt {
+.loginControls {
   margin: auto;
   width: 100vw;
   height: 50vh;
@@ -72,12 +72,30 @@ header {
   justify-content: center;
 
 }
+.playControls{
+  margin:auto;
+  width: 100vw;
+  height: 50vh;
+  font-size: 30px;
+  background-color: azure;
+  flex:auto;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 
 .subHeader {
   margin: 0;
   background-color: azure;
 }
 
+.playerName
+{
+  margin: 20px;
+  background-color: azure;
+}
 .input {
   background-color: azure;
   padding-right: 10px;
@@ -87,6 +105,7 @@ header {
   background-color: azure; 
 }
 button{
+  margin: 5px;
   font-size: 40px;
   background-color: azure;
   display: flex;
