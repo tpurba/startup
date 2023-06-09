@@ -13,10 +13,12 @@
 })();
 
 async function loginUser() {
+  console.log("Login button pressed");
   loginOrCreate(`/api/auth/login`);
 }
 
 async function createUser() {
+  console.log("createUser button pressed");
   loginOrCreate(`/api/auth/create`);
 }
 
@@ -36,10 +38,11 @@ async function loginOrCreate(endpoint) {
     window.location.href = 'play.html';
   } else {
     const body = await response.json();
-    const modalEl = document.querySelector('#msgModal');
-    modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-    const msgModal = new bootstrap.Modal(modalEl, {});
-    msgModal.show();
+    // const modalEl = document.querySelector('#msgModal');
+    alert(`⚠ Error: ${body.msg}`);
+    // modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+    // const msgModal = new bootstrap.Modal(modalEl, {});
+    // msgModal.show();
   }
 }
 
