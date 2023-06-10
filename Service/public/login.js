@@ -41,11 +41,7 @@ async function loginOrCreate(endpoint) {
     window.location.href = 'play.html';
   } else {
     const body = await response.json();
-    // const modalEl = document.querySelector('#msgModal');
     alert(`⚠ Error: ${body.msg}`);
-    // modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-    // const msgModal = new bootstrap.Modal(modalEl, {});
-    // msgModal.show();
   }
 }
 
