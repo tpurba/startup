@@ -155,17 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(newScore),
         });
-        console.log("Score:" + score);
         // Let other players know the game has concluded
-        broadcastEvent(getPlayerName(), GameEndEvent, score);
-        
+        broadcastEvent(getPlayerName(), GameEndEvent, newScore);
         const scores = await response.json();//use response of json to make the scores array
 
         localStorage.setItem('scores', JSON.stringify(scores));// store locally as well
       } catch {
         // If there was an error then just track scores locally
         updateScoresLocal(newScore);
-        console.log("Error occured saving score to local")
+        //console.log("Error occured saving score to local")
       }
     }
 
