@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
   const scoreDisplay = document.querySelector('.score');
   const playerName = document.querySelector('.player-name');
-  var socket;
+  const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+  const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
   let bottom = 0;
   let gravity = 0.9;
   let score = 0;
@@ -14,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const GameStartEvent = 'gameStart';
   cactus.style.animation = 'none'; //before game have cactus animations stopped 
   document.addEventListener("keydown", handleStart, { once: true });
-
+  
+  displayMsg('system', 'game', 'connected');
+  configureWebSocket(); // start of game confiugre websocket 
   function getPlayerName() {
     if (localStorage.getItem('userName') === '') {
       return 'MysteryPlayer';
@@ -23,20 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
       return localStorage.getItem('userName');
     }
   }
-
+  //set player name 
   const playerNameEl = document.querySelector('.player-name');
-  console.log("before get playerName");
   playerNameEl.textContent = getPlayerName();
-  console.log("after get playerName");
 
   //websocket functions 
   function configureWebSocket() {
-    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
     socket.onopen = (event) => {
+      console.log("in open ws");
       displayMsg('system', 'game', 'connected');
     };
     socket.onclose = (event) => {
+      console.log("in close ws");
       displayMsg('system', 'game', 'disconnected');
     };
     socket.onmessage = async (event) => {
@@ -61,13 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
       type: type,
       value: value,
     };
+    console.log(event);
     socket.send(JSON.stringify(event));
   }
   //websocket functions 
 
   //begin game 
   function handleStart() {
-    configureWebSocket(); // start of game confiugre websocket 
+    //socket.onopen;
     // Let other players know a new game has started
     broadcastEvent(getPlayerName(), GameStartEvent, {});
     cactus.style.animation = 'block 1.3s linear infinite'; //start cactus animations 
@@ -130,13 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
       var isCollision = checkCollision(dino, cactus);
       if (isCollision) {
         clearInterval();
-        // Let other players know the game has concluded
-        broadcastEvent(userName, GameEndEvent, newScore);
         alert("Game Over! \n Score:" + score);
         //store the score and the players userName together for database 
         saveScore(score);
         score = 0;
-        // window.location.href = 'scoreBoard.html';
+        //window.location.href = 'scoreBoard.html';
       }
 
     }, 10);
@@ -157,6 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(newScore),
         });
 
+        // Let other players know the game has concluded
+        broadcastEvent(getPlayerName(), GameEndEvent, score);
+        
         const scores = await response.json();//use response of json to make the scores array
 
         localStorage.setItem('scores', JSON.stringify(scores));// store locally as well
