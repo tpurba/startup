@@ -15,9 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const GameStartEvent = 'gameStart';
   cactus.style.animation = 'none'; //before game have cactus animations stopped 
   document.addEventListener("keydown", handleStart, { once: true });
-  
-  displayMsg('system', 'game', 'connected');
-  configureWebSocket(); // start of game confiugre websocket 
+  //congfigure websocket here 
+  configureWebSocket();
   function getPlayerName() {
     if (localStorage.getItem('userName') === '') {
       return 'MysteryPlayer';
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //store the score and the players userName together for database 
         saveScore(score);
         score = 0;
-        //window.location.href = 'scoreBoard.html';
+        window.location.href = 'scoreBoard.html';
       }
 
     }, 10);
@@ -156,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(newScore),
         });
-
+        console.log("Score:" + score);
         // Let other players know the game has concluded
         broadcastEvent(getPlayerName(), GameEndEvent, score);
         
