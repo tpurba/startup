@@ -12,7 +12,9 @@ export function About() {
             <h2 className="myheader">Introduction</h2>
             <p className="Introduction">
               Welcome to the runner game! Thank you for joining us and playing
-              this wonderful game I created!
+              this wonderful game! This game was creted by members of the Chrome UX team in 2014
+              and is not my game all credit goes to the individuals who made dino game one of the 
+              greatest games ever.
             </p>
             <h2 className="subsection"> How to play</h2>
             <p className="HowToPlay">

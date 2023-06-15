@@ -4,15 +4,18 @@ import { Login } from './login/login';
 import { Game } from './game/game';
 import { Score } from './score/score';
 import { About } from './about/about';
+import { AuthState } from './login/authState';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
 
 
-export default function App() {
-
+function App() {
+  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
+  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
+  const [authState, setAuthState] = React.useState(currentAuthState);
   return (
-    <BrowserRouter id = "body">
+    <BrowserRouter id="body">
       <div id="page-container">
         <div id="content-wrap">
           <div className='body bg-dark text-light'>
@@ -46,7 +49,20 @@ export default function App() {
               </nav>
             </header>
             <Routes>
-              <Route path='/' element={<Login />} exact />
+              <Route
+                path='/'
+                element={
+                  <Login
+                    userName={userName}
+                    authState={authState}
+                    onAuthChange={(userName, authState) => {
+                      setAuthState(authState);
+                      setUserName(userName);
+                    }}
+                  />
+                }
+                exact
+              />
               <Route path='/game' element={<Game />} />
               <Route path='/score' element={<Score />} />
               <Route path='/about' element={<About />} />
@@ -71,3 +87,4 @@ export default function App() {
 function NotFound() {
   return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
 }
+export default App;
