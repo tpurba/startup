@@ -2,11 +2,16 @@
   display: flex;
   flex-direction: column;
   min-width: 375px;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: lightgoldenrodyellow;
+  margin: 0; 
 }
 
 header {
   flex: 0 80px;
+  font-size: 20px;
+  font-family: fantasy;
+  background-color: hsl(223, 57%, 38%);
 }
 
 main {
@@ -18,9 +23,28 @@ main {
 }
 
 footer {
-  flex: 0 30px;
+  flex-shrink: 0; /* Use flex-shrink: 0 instead of flex: 0 30px */
+  background: hsl(180, 30%, 15%);
+  border: black solid thin;
+  padding: 5px; /* Adjust the padding to desired value */
+}
+#page-container {
+  flex: 1; /* Use flex: 1 instead of height: 100vh */
+  overflow-y: auto; /* Use overflow-y instead of overflow and remove !important */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
+#content-wrap {
+  height: fit-content;
+}
+
+#body{
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
 menu {
   flex: 1;
   display: flex;
@@ -31,17 +55,24 @@ menu {
 
 .navbar-brand {
   padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
+  background-color: black;
+  color:white;
+  border-bottom: solid blue thin;
 }
 
 menu .nav-item {
   padding: 0 0.3em;
 }
+.nav-link{
+  color: aliceblue;
+}
 
 footer a {
   float: right;
 }
-
+.text-reset{
+  color: white;
+}
 @media (max-height: 600px) {
   header {
     display: none;
