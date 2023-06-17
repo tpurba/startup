@@ -1,10 +1,10 @@
 # **Runner**
 ## **Deliverable specification**
 NOTE: All the code for this readme file is in Service folder. 
-### **Elevator pitch**
+## **Elevator pitch**
 Did the internet connection ever go out on your chrome browser and you were stuck without WI-FI playing the dinosaur game as you jump over cacti and under pterodactyls? I know I have and I know many of us have played the game. Well let me tell you I have made a new game that reimagines the same feeling of playing the dinosaur game with color in a vibrant background where you can race against everyone else around the world and have rivals in the game that you try to beat. Why not try it out? 
 
-### **Design**
+## **Design**
 
 <img src="images/LoginPage.png" 
              height = "200" width = "200" alt="LoginPage">
@@ -17,12 +17,12 @@ Did the internet connection ever go out on your chrome browser and you were stuc
              height = "200" width = "200" alt="BackEnd">
 
 
-### **Key features**
+## **Key features**
 	• Secure login over HTTPS 
 	• Show score to the world 
 	• Play the new and improved dinosaur game
 	• Compete with friends 
-### **Technologies**
+## **Technologies**
 	• HTML- HTML will be used to structure the website pages and create clean layouts 
 	• CSS- will be used to create the visuals of the game and make the game vibrant 
 	• JavaScript- handle the logic of the login
@@ -55,28 +55,45 @@ Did the internet connection ever go out on your chrome browser and you were stuc
 		○ scoreBoard.html- formatted header/footer/score board
 		○ game.html-formatted header/footer/game layout/ notification texts
 		○ help.html- formatted header/footer/image/text
-### Java Script Deliverable 
+## Java Script Deliverable 
 	• For this deliverable I made the dino game playable
 		○ login- When you press the submit button it takes you to the game.html page where you play the dino game
 		○ database - wrote psudo code for the database implementation that will be done in the future in game.css function addResult and scores.js
 		○ WebSocket - wrote psudo code for the websocket implementation as I do not know how it really works in game.css
 		○ application logic- dino game is playable where if you press the space bar the dinosaur will jump
-### Service Deliverable 
+## Service Deliverable 
 -Node.js/Express HTTP service - done!
 -Static middleware for frontend - done!
 -Calls to third party endpoints - Not done yet 
 -Backend service endpoints - Adds scores to the server array and retrieves them to display scores 
 -Frontend calls service endpoints - uses fetch to get data from the server and displays scores on Scoreboard. 
 
-### DB deliverable 
+## DB deliverable 
 For this deliverable I stored and retrieved data from MongoDB.
 -MongoDB Atlas database created - done!
 -Endpoints for data - Through the router endpoints I request and get data from the database. 
 -Stores data in MongoDB - done!
 
-### Login deliverable 
+## Login deliverable 
 For this deliverable I added user registration and authentication.
 -User registration - Creates a new account in the database.
 -existing user - Verifies the user's name and password from data stored in the database
 -Use MongoDB to store credentials - finished!
--Restricts functionality - You can't play the game or look at the score board until you log in.
+-Restricts functionality - You can't play the game or look at the score board until you log in.    
+
+## WebSocket deliverable
+For this deliverable I used webSocket to update the votes on the frontend in realtime.
+
+-Backend listens for WebSocket connection - finished!   
+-Frontend makes WebSocket connection - finished!   
+-Data sent over WebSocket connection - finished!   
+-WebSocket data displayed - All users scores display in realtime once game ends for them. This is really cool a little buggy sometimes but intresting!   
+
+
+## React deliverable
+For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.   
+
+## Bundled and transpiled - done!   
+Components - Login, Scoreboard, and about page.  
+Router - Routing between login, scorebaord, and about pages.   
+Hooks - Scoreboard uses use effect hook to update state objects with the results.   
