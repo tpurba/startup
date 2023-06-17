@@ -1,0 +1,35 @@
+td {
+  max-width: 40vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.scoreBoard {
+  width: 80vw;
+  border-collapse: collapse;
+}
+.scoreBoard th,
+.scoreBoard td {
+    width: 100vw;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.scoreBoard th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+.scoreBoard td
+{
+    background-color: peachpuff;
+    color: black;
+    
+}
+

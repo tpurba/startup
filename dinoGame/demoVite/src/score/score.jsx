@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './scores.css';
+
 export function Score() {
   const [scores, setScores] = React.useState([]);
 
@@ -26,7 +28,7 @@ export function Score() {
     for (const [i, score] of scores.entries()) {
       scoreRows.push(
         <tr key={i}>
-          <td>{i}</td>
+          <td>{i+1}</td>
           <td>{score.name.split('@')[0]}</td>
           <td>{score.score}</td>
           <td>{score.date}</td>
@@ -52,7 +54,7 @@ export function Score() {
                 <th> Date</th>
               </tr>
             </thead>
-            <tbody id="scores"></tbody>
+            <tbody id="scores">{scoreRows}</tbody>
           </table>
         </div>
       </main>
