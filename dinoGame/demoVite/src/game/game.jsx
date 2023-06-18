@@ -1,9 +1,12 @@
 import React from 'react';
+import { Players } from './players';
+import { DinoGame } from './dinoGame';
 
-export function Game() {
+export function Game(props) {
   return (
     <main className='container-fluid bg-secondary text-center'>
-      <div>Game displayed here</div>
+      <Players userName={props.userName} />
+     <DinoGame userName={props.userName} />
     </main>
   );
 }
