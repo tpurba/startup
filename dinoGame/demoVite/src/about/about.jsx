@@ -7,7 +7,7 @@ export function About() {
         <main className='container'>
           <div className="content">
             <div className="picture">
-              <img id="sunset" src="../images/sunSet.png" alt="sunSet"></img>
+              <img id="sunset" src="./images/sunSet.png" alt="sunSet"></img>
             </div>
             <h2 className="myheader">Introduction</h2>
             <p className="Introduction">
