@@ -86,6 +86,7 @@ export function DinoGame(props) {
         //store the score and the players userName together for database 
         saveScore(score);
         score = 0;
+        //after game redirect to score
         window.location.href = '/score';
       }
 
